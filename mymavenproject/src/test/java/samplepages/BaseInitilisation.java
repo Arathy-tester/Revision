@@ -16,7 +16,7 @@ public class BaseInitilisation
 	public static void main(String[] args) {
 		BaseInitilisation base= new BaseInitilisation();
 		base.initilise();
-		//base.dragsandDrops();
+		base.dragsandDrops();
 	}
 	public void initilise() {
 		driver= new ChromeDriver();
@@ -35,7 +35,7 @@ public class BaseInitilisation
 		WebElement nextDrag= driver.findElement(By.xpath("//a[@id='droppableExample-tab-accept']"));
 		nextDrag.click();
 		WebElement drag= driver.findElement(By.xpath("//div[@id='acceptable']"));
-		WebElement drop= driver.findElement(By.xpath("//div[@id='notAcceptable']"));
+		WebElement drop= driver.findElement(By.xpath("(//div[@id='droppable'])[2]"));
 		Actions action= new Actions(driver);
 		 //action.clickAndHold(drag)
          //.moveToElement(drop)
