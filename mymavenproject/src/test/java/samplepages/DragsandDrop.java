@@ -22,12 +22,13 @@ public class DragsandDrop extends BaseInitilisation {
 		WebElement drag= driver.findElement(By.id("draggable"));
 		WebElement drop= driver.findElement(By.id("droppable"));
 		Actions action= new Actions(driver);
-		 action.clickAndHold(drag)
-         .moveToElement(drop)
-         .release()
-         .build()
-         .perform();
-		//action.dragAndDrop(drag, drop).build().perform();
+		 //action.clickAndHold(drag)
+         //.moveToElement(drop)
+        // .release()
+         //.build()
+         //.perform();
+		action.scrollByAmount(0, 500).perform();
+		action.dragAndDrop(drag, drop).build().perform();
 	}
 	public static void main(String[] args) {
 		DragsandDrop dragandDrop=new DragsandDrop();
