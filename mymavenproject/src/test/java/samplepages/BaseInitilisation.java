@@ -16,7 +16,7 @@ public class BaseInitilisation
 	public static void main(String[] args) {
 		BaseInitilisation base= new BaseInitilisation();
 		base.initilise();
-		base.dragsandDrops();
+		//base.dragsandDrops();
 	}
 	public void initilise() {
 		driver= new ChromeDriver();
