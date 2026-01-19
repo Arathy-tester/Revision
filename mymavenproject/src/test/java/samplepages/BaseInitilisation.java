@@ -20,7 +20,7 @@ public class BaseInitilisation
 	}
 	public void initilise() {
 		driver= new ChromeDriver();
-		driver.get("https://demoqa.com/droppable");
+		//driver.get("https://demoqa.com/droppable");
 		driver.manage().window().maximize();
 		
 		//WebElement login= driver.findElement(By.xpath("//span[text()='Login']"));
