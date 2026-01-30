@@ -1,5 +1,8 @@
 package samplepages;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
@@ -47,6 +50,21 @@ public class Action_Class extends BaseInitilisation {
 		mhover.click();
 		
 	}
+	public void verifyKeyBoardActions() throws AWTException
+	{
+		driver.navigate().to("https://selenium.qabible.in/simple-form-demo.php");
+		Robot robot=new Robot();
+		robot.keyPress(KeyEvent.VK_CONTROL);
+		robot.keyPress(KeyEvent.VK_T);
+		robot.keyRelease(KeyEvent.VK_CONTROL);
+		robot.keyRelease(KeyEvent.VK_T);
+		robot.keyPress(KeyEvent.VK_CONTROL);
+		robot.keyPress(KeyEvent.VK_W);
+		robot.keyRelease(KeyEvent.VK_CONTROL);
+		robot.keyRelease(KeyEvent.VK_W);
+		
+	}
+	
 	
 	public static void main(String[] args) {
 		Action_Class dragandDrop=new Action_Class();
@@ -54,6 +72,12 @@ public class Action_Class extends BaseInitilisation {
 		dragandDrop.initilise();
 		//dragandDrop.dragDrop();
 		//dragandDrop.rightclick();
-		dragandDrop.mousehover();
+		//dragandDrop.mousehover();
+		try {
+			dragandDrop.verifyKeyBoardActions();
+		} catch (AWTException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }
